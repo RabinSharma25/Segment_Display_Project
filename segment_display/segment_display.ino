@@ -19,9 +19,9 @@ const uint8_t cat1 = 1; // connect of pin 9
 const uint8_t cat2 = 2; // connect  to pin 10
 const uint8_t cat3 = 3; // donnect to pin 11
 const uint8_t cat4 = 4; // connect to pin 12
-int value1= 10; // pass first number to be displayed here
-int value2 = 9; // pass second number to be displayed here
-int freq = 1;
+int value1 = 51;
+int value2 = 51;
+int freq = 5;
 int first_val;
 int second_val;
 
@@ -56,6 +56,7 @@ int val9D = B10111100;
 int val9B = B00011111;
 
 void setup(){
+  pinMode(13,LOW);
   Serial.begin(9600);
   Wire.begin();
 
@@ -76,6 +77,8 @@ void loop(){
 
 
 
+
+
   ///////////////////////////////////////
 digit_splitter(value1);
 display_seg_value1_f();
@@ -83,7 +86,8 @@ display_seg_value1_l();
 digit_splitter(value2);
 display_seg_value2_f();
 display_seg_value2_l();
-
+//value1=mins;
+//value2=sec;
 }
 void display_seg_value1_f(){
 
@@ -326,6 +330,7 @@ void display_seg_value2_l(){
     else if(second_val ==1){
       PORTD = val1D;
       PORTB = val1B;
+      digitalWrite(8,HIGH);
       digitalWrite(12,LOW);
       delay(freq);      
   }
