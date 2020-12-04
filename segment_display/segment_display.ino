@@ -1,10 +1,23 @@
       /*        
-              _a
-            f|_|b
-            e|_|c
-              d
-             
-                
+              _A
+            F|_|B
+            E|_|C
+              D
+              The centre segment is G
+
+
+pin connections 
+
+segment pin 1   :  1   2   3   4   5   6   7   8   9   10   11   12 
+segment letters :  E   D       C   G   c4  B   c3  c2  F    A    c1
+Arduino pin     :  6   5  gnd  4   8   12  3   11  10  7    2    9
+
+abbreviations used :: 
+c1 -- cathode 1
+c2 -- cathode 2
+c3 -- cathode 3
+c4 -- cathode 4
+                             
 */
 #include<Wire.h>
 const uint8_t pinA = 2; 
